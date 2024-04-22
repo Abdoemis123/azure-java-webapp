@@ -16,7 +16,22 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <finalName>helloabdessamad</finalName>
+   
+
+            <build>
+        <!-- other configurations if present -->
+           <finalName>helloabdessamad</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- ensure you are using a recent version -->
+                <configuration>
+                    <source>11</source> <!-- Set this to your JDK version -->
+                    <target>11</target> <!-- Set this to your JDK version -->
+                    <encoding>UTF-8</encoding> <!-- This will handle the encoding warning -->
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
