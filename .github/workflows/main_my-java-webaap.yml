@@ -17,9 +17,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Java version
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v2
         with:
           java-version: '11'
+          distribution: 'adopt' # or 'temurin' or other supported distributors
 
       - name: Build with Maven
         run: mvn clean install
@@ -58,5 +59,5 @@ jobs:
         with:
           app-name: 'my-java-webaap'
           slot-name: 'Production'
-          package: '*.jar'
+          package: '${{ github.workspace }}/target/myapp.jar'  # Adjust 'myapp.jar' to your JAR file's name
           
